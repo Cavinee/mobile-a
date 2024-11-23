@@ -5,6 +5,12 @@ import 'Motorcycle.dart';
 Perbedan dari public dan private:
 - Access modifier public berarti atribut tersebut bisa diakses dari mana saja ketika objeknya dibuat
 - Access modifier private berarti atribut tersebut hanya bisa diakses dari dalam class tersebut ketika objeknya dibuat (hanya bisa digunakan oleh method)
+
+Untuk mengakses atribut public, bisa memanggil dengan format ObjectName.AttributeName
+
+Karena atribut private tidak bisa diakses dari luar class, maka perlu dibuat method khusus yaitu getter dan setter
+Getter adalah method yang akan return value dari atribut itu.
+Setter adalah method untuk set atribut tersebut ke value baru.
 */
 
 /*
@@ -47,6 +53,7 @@ void main() {
 
   myMotorcycle.setName("N-Max");
   print(myMotorcycle.getName());
+  // print(myMotorcycle._name); // ini akan menghasilkan error jika kalian uncomment karena atribut _name dianggap "tidak ada" karena memiliki access modifier private
 
   /*
   Perbedaan utama dari List, Set, dan Map
