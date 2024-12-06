@@ -15,7 +15,17 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
         useMaterial3: true,
       ),
-      home: const MyDialog(),
+      /*
+      Kalau misalnya kalian mau cek Widget lain yang udah dibuat, kalian bisa ganti nih MyDialog() nya jadi widget yang udah ada dibawah
+      MyHomePage() itu default ketika kita create new project
+      MyRow() itu implementasi widget Row
+      MyColumn() itu implementasi widget Column
+      MyCenter() itu implementasi widget Center
+      MyStack() itu implementasi widget Stack
+      MyListView() itu implementasi widget ListView
+      MyDialog() itu implementasi widget Alert Dialog
+      */
+      home: const MyDialog(), 
       debugShowCheckedModeBanner: false,
     );
   }
@@ -308,12 +318,13 @@ class MyDialog extends StatelessWidget {
         leading: const Icon(Icons.menu)
       ),
       body: ElevatedButton(
-        onPressed: () {
-          return showAboutDialog(
+        onPressed: () async {
+          return showDialog(
             context: context,
-            children: [
-              const Text("Hello", style: TextStyle(color: Colors.teal),)
-            ]
+            builder: (context) => const AlertDialog(
+              title: Text("This is an Alert Dialog"),
+              content: Text("Hello 😊")
+            )
           );
         }, 
         child: const Text("Press me")
